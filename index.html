@@ -9,9 +9,9 @@
     <!-- anon-on -->
     <meta name="twitter:site" content="@GoogleAI" />
     <!-- anon-off -->
-    <meta name="twitter:title" content="Open-Domain Visual Entity Recognition" />
-    <meta name="twitter:description" content="Towards Recognizing Millions of Wikipedia Entities" />
-    <meta name="twitter:image" content="https://open-vision-language.github.io/images/logo/" />
+    <meta name="twitter:title" content="Can Pre-trained Vision and Language Models Answer Visual Information-seeking Questions?" />
+    <meta name="twitter:description" content="Can Pre-trained Vision and Language Models Answer Visual Information-seeking Questions?" />
+    <meta name="twitter:image" content="https://muse-model.github.io/images/logo/muse_cake_1.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -21,16 +21,466 @@
     <script src="jquery.min.js"></script>
     <script src="jquery.flip.min.js"></script>
 
-    <title>Open-Domain Visual Entity Recognition: Towards Recognizing Millions of Wikipedia Entities</title>
+    <title>OVEN: Open-domain Visual Entity Recognition</title>
   </head>
   <body>
-    <h2 style="text-align: center;">Open-Domain Visual Entity Recognition: Towards Recognizing Millions of Wikipedia Entities</h2>
-    <div class="authors">
-      <p>Hexiang Hu, Yi Luan, Yang Chen, Urvashi Khandelwal</p>
-      <p>Mandar Joshi, Kenton Lee, Kristina Toutanova, Ming-Wei Chang</p>
-      <center><img src="https://research.google/static/images/google_research_lockup-121987c06c0aa0ab26ca8716a0f2e7945d1cbf82077bbab9f914dac0a0bf099f.svg" alt="Google Research" height=25></center>
+    <div id="gallery0" style="padding-top: 50px; padding-bottom: 20px; background-color: rgb(245,245,245);"> 
+      
+      <h2 style="text-align: center;">Open-domain Visual Entity Recognition</h2>
+      <h2 style="text-align: center;">Towards Recognizing Millions of Wikipedia Entities</h2>
+      <!-- anon-on -->
+      <div class="authors text-center">
+        <div class="row">
+          <div class="col">Hexiang Hu<sup>1</sup></div>
+          <div class="col">Yi Luan<sup>1</sup></div>
+          <div class="col">Yang Chen<sup>1,2*</sup></div>
+          <div class="col">Urvashi Khandelwal <sup>1</sup></div>
+        </div>
+        <div class="row">
+          <div class="col">Mandar Joshi<sup>1</sup></div>
+          <div class="col">Kenton Lee<sup>1</sup></div>
+          <div class="col">Kristina Toutanova<sup>1</sup></div>
+          <div class="col">Ming-Wei Chang<sup>1</sup></div>
+        </div>
+        <div class="row mt-3">
+          <div class="col">
+            <sup>1</sup><img src="https://research.google/static/images/google_research_lockup-121987c06c0aa0ab26ca8716a0f2e7945d1cbf82077bbab9f914dac0a0bf099f.svg" alt="Google Research" height=25>
+          </div>
+          <div class="col">
+            <sup>2</sup><img src="https://brand.gatech.edu/sites/default/files/inline-images/extended-RGB.png" alt="Georgia Tech" height=35>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-small">(*: Work done when author was interned at Google Research)</div>
+        </div>
+
+        <div class="row mt-0 nomobile">
+          <center><a href="https://arxiv.org/abs/2302.11154"><img class="thumbnail" src="images/oven_thumbnail.png"></a></center>
+        </div>
+      </div>
+      <!-- anon-off -->
     </div>
 
-    <script src="bootstrap.bundle.min.js"></script>
+    <div class="abstract">
+      <div class="inside">
+        <p class="text">
+        Large-scale multi-modal pre-training models such as CLIP and PaLI exhibit strong generalization on various visual domains and tasks. However, existing image classification benchmarks often evaluate recognition on a specific domain (e.g., outdoor images) or a specific task (e.g., classifying plant species), which falls short of evaluating whether pre-trained foundational models are universal visual recognizers. To address this, we formally present the task of <i>Open-domain Visual Entity recognitioN (OVEN)</i>, where a model need to link an image onto a Wikipedia entity with respect to a text query. We construct OVEN-Wiki by re-purposing 14 existing datasets with all labels grounded onto one single label space: Wikipedia entities. OVEN challenges models to select among six million possible Wikipedia entities, making it a general visual recognition benchmark with the largest number of labels. Our study on state-of-the-art pre-trained models reveals large headroom in generalizing to the massive-scale label space. We show that a PaLI-based auto-regressive visual recognition model performs surprisingly well, even on Wikipedia entities that have never been seen during fine-tuning. We also find existing pretrained models yield different strengths: while PaLI-based models obtain higher overall performance, CLIP-based models are better at recognizing tail entities.
+        </p>
+        <!-- anon-on -->
+        <a class="read-paper" href="https://arxiv.org/abs/2302.11154"><button>Research Paper</button></a>
+        <a class="read-paper" href="", style="_blank"><button>Data (Coming Soon)</button></a>
+        <!-- anon-off -->
+      </div>
+    </div>
+
+    <div class="header_dark_gray text-center">
+      <h1>OVEN models recognize the <i>Visual Entity on the Wikipedia</i>, from images in the wild</h1>
+    </div>
+    <div class="image_8" id="gallery1">
+      <div class="flipcard" id="fig0">
+        <div class="front">
+          <figure>
+            <img>
+            <figcaption class="question"></figcaption>
+            <figcaption class="answer"></figcaption>
+          </figure>
+        </div>
+        <div class="back">
+          <figure>
+            <img>
+            <figcaption class="question"></figcaption>
+            <figcaption class="answer"></figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="flipcard nomobile" id="fig1">
+        <div class="front">
+          <figure>
+            <img>
+            <figcaption class="question"></figcaption>
+            <figcaption class="answer"></figcaption>
+          </figure>
+        </div>
+        <div class="back">
+          <figure>
+            <img />
+            <figcaption class="question"></figcaption>
+            <figcaption class="answer"></figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="flipcard nomobile" id="fig2">
+        <div class="front">
+          <figure>
+            <img>
+            <figcaption class="question"></figcaption>
+            <figcaption class="answer"></figcaption>
+          </figure>
+        </div>
+        <div class="back">
+          <figure>
+            <img>
+            <figcaption class="question"></figcaption>
+            <figcaption class="answer"></figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="flipcard nomobile" id="fig3">
+        <div class="front">
+          <figure>
+            <img>
+            <figcaption class="question"></figcaption>
+            <figcaption class="answer"></figcaption>
+          </figure>
+        </div>
+        <div class="back">
+          <figure>
+            <img>
+            <figcaption class="question"></figcaption>
+            <figcaption class="answer"></figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="flipcard nomobile" id="fig4">
+        <div class="front">
+          <figure>
+            <img>
+            <figcaption class="question"></figcaption>
+            <figcaption class="answer"></figcaption>
+          </figure>
+        </div>
+        <div class="back">
+          <figure>
+            <img>
+            <figcaption class="question"></figcaption>
+            <figcaption class="answer"></figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="flipcard nomobile" id="fig5">
+        <div class="front">
+          <figure>
+            <img>
+            <figcaption class="question"></figcaption>
+            <figcaption class="answer"></figcaption>
+          </figure>
+        </div>
+        <div class="back">
+          <figure>
+            <img>
+            <figcaption class="question"></figcaption>
+            <figcaption class="answer"></figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="flipcard nomobile" id="fig6">
+        <div class="front">
+          <figure>
+            <img>
+            <figcaption class="question"></figcaption>
+            <figcaption class="answer"></figcaption>
+          </figure>
+        </div>
+        <div class="back">
+          <figure>
+            <img>
+            <figcaption class="question"></figcaption>
+            <figcaption class="answer"></figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="flipcard nomobile" id="fig7">
+        <div class="front">
+          <figure>
+            <img>
+            <figcaption class="question"></figcaption>
+            <figcaption class="answer"></figcaption>
+          </figure>
+        </div>
+        <div class="back">
+          <figure>
+            <img>
+            <figcaption class="question"></figcaption>
+            <figcaption class="answer"></figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+<!-- anon-on -->
+<div class="content">
+  <h1>Special Thanks</h1>
+  <p class="smaller" style="text-align: justify;"> We thank Boqing Gong, Soravit Changpinyo for reviewing on an early version of this paper in depth, with valuable comments and suggestions. We thank Xi Chen for providing different variants of PaLI pre-trained checkpoints. We also thank Radu Soricut, Anelia Angelova, Alan Ritter, Chao-Yuan Wu, Jiacheng Chen for discussions and feedback on the project.
+  </p>
+</div>
+<!-- anon-off -->
+
+<script type="text/javascript">
+
+  gallery_images = [
+  {
+    "src": "./images/oven-images/fungi1.png",
+    "question": "<span style='color: #c994c7'>Query</span>: Which species of fungi is this?",
+    "answer": "<span style='color: #dd1c77'>Entity</span>: <a href='https://en.wikipedia.org/wiki/Omphalotus_illudens'>Omphalotus illudens (Q7090729)</a>"
+  },
+  {
+    "src": "./images/oven-images/bird1.png",
+    "question": "<span style='color: #c994c7'>Query</span>: What kind of sports is this?",
+    "answer": "<span style='color: #dd1c77'>Entity</span>: <a href='https://en.wikipedia.org/wiki/Ash-throated_flycatcher'>Ash-throated flycatcher (Q650369)</a>",
+  },
+  {
+    "src": "./images/oven-images/mountain1.png",
+    "question": "<span style='color: #c994c7'>Query</span>: What is this mountain called?",
+    "answer": "<span style='color: #dd1c77'>Entity</span>: <a href='https://en.wikipedia.org/wiki/Sawtooth_Range_(Idaho)'>Sawtooth Range (Q7428707)</a>",
+  },
+  {
+    "src": "./images/oven-images/food1.png",
+    "question": "<span style='color: #c994c7'>Query</span>: What dish is pictured?",
+    "answer": "<span style='color: #dd1c77'>Entity</span>: <a href='https://en.wikipedia.org/wiki/Ceviche'>Ceviche (Q1057953)</a>",
+  },
+  {
+    "src": "./images/oven-images/beer1.png",
+    "question": "<span style='color: #c994c7'>Query</span>: What brand of beer is in the bucket?",
+    "answer": "<span style='color: #dd1c77'>Entity</span>: <a href='https://en.wikipedia.org/wiki/Estrella_Galicia'>Estrella Galicia (Q3394030)</a>",
+  },
+  {
+    "src": "./images/oven-images/aircraft1.png",
+    "question": "<span style='color: #c994c7'>Query</span>: What model of aircraft is shown?",
+    "answer": "<span style='color: #dd1c77'>Entity</span>: <a href='https://en.wikipedia.org/wiki/Cessna_172'>Cessna 172 (Q244479)</a>"
+  },
+  {
+    "src": "./images/oven-images/shoe1.png",
+    "question": "<span style='color: #c994c7'>Query</span>: What kind of shoes is this person wearing?",
+    "answer": "<span style='color: #dd1c77'>Entity</span>: <a href='https://en.wikipedia.org/wiki/Flip-flops'>Flip-flops (Q380339)</a>",
+  },
+  {
+    "src": "./images/oven-images/material1.png",
+    "question": "<span style='color: #c994c7'>Query</span>: What is that statue made out of?",
+    "answer": "<span style='color: #dd1c77'>Entity</span>: <a href='https://en.wikipedia.org/wiki/Cast_iron'>Cast iron (Q483269)</a>",
+  },
+  {
+    "src": "./images/oven-images/car1.png",
+    "question": "<span style='color: #c994c7'>Query</span>: What is the make and model of this car?",
+    "answer": "<span style='color: #dd1c77'>Entity</span>: <a href='https://en.wikipedia.org/wiki/Nissan_Juke'>Nissan Juke (Q1415815)</a>"
+  },
+  {
+    "src": "./images/oven-images/place1.png",
+    "question": "<span style='color: #c994c7'>Query</span>: What is the place these guys are fighting called?",
+    "answer": "<span style='color: #dd1c77'>Entity</span>: <a href='https://en.wikipedia.org/wiki/Wrestling_ring'> Wrestling ring (Q6763849)</a>",
+  },
+  {
+    "src": "./images/oven-images/food2.png",
+    "question": "<span style='color: #c994c7'>Query</span>: What is the name of the dish shown?",
+    "answer": "<span style='color: #dd1c77'>Entity</span>: <a href='https://en.wikipedia.org/wiki/French_onion_soup'>French onion soup (Q244617)</a>"
+  },
+  {
+    "src": "./images/oven-images/place2.png",
+    "question": "<span style='color: #c994c7'>Query</span>: What is the name of the location at the end of the street?",
+    "answer": "<span style='color: #dd1c77'>Entity</span>: <a href='https://en.wikipedia.org/wiki/Palais_Longchamp'>Palais Longchamp (Q1619084)</a>"
+  },
+  ];
+
+  lastCardFlippedIdx = {
+    gallery1: -1,
+  };
+
+  lastCardFlippedLastSwapTime = {
+    gallery1: -1,
+  };
+
+  $(".flipcard").flip({
+    trigger: "manual",
+    reverse: false,
+  });
+
+  function checkIfImageIsVisible(name, image) {
+    numCards = $(name + " .flipcard:visible").size();
+
+    for (var cardIdx = 0; cardIdx < numCards; ++cardIdx) {
+      var isFlipped = $(name + " #fig" + cardIdx).data("flip-model").isFlipped;
+      if (!isFlipped) {
+        src = $(name + " #fig" + cardIdx + " div.front figure img").attr("src")
+      } else {
+        src = $(name + " #fig" + cardIdx + " div.back figure img").attr("src")
+      }
+
+      if (image.src == src) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  function getNextImage(name) {
+    // different galleries have different sources of imagery.
+    img_src = gallery_images;
+    while (true) {
+      randomImageIdx = Math.floor(Math.random() * img_src.length);
+      if (!checkIfImageIsVisible(name, img_src[randomImageIdx])) {
+        return img_src[randomImageIdx];
+      }
+    }
+  }
+
+  function randomSwapImageWithId(name, randomCardIdx) {
+    numCards = $(name + " .flipcard:visible").size();
+
+    image = getNextImage(name);
+
+    const d = new Date();
+    let currentTime = d.getTime();
+    lastCardFlippedIdx[name] = randomCardIdx;
+    lastCardFlippedLastSwapTime[name] = currentTime;
+
+    var isFlipped = $(name + " #fig" + randomCardIdx).data("flip-model").isFlipped;
+    if (!isFlipped) {
+      $(name + " #fig" + randomCardIdx + " div.back figure img").attr("src", image.src)
+      $(name + " #fig" + randomCardIdx + " div.back figure figcaption.question").html(image.question)
+      $(name + " #fig" + randomCardIdx + " div.back figure figcaption.answer").html(image.answer)
+    } else {
+      $(name + " #fig" + randomCardIdx + " div.front figure img").attr("src", image.src)
+      $(name + " #fig" + randomCardIdx + " div.front figure figcaption.question").html(image.question)
+      $(name + " #fig" + randomCardIdx + " div.front figure figcaption.answer").html(image.answer)
+    }
+
+    $(name + " #fig" + randomCardIdx).flip("toggle");
+  }
+
+  function randomSwapImage(name) {
+    numCards = $(name + " .flipcard:visible").size();
+
+    const d = new Date();
+    if (d.getTime() - lastCardFlippedIdx[name] < 5000) {
+      setTimeout(randomSwapImage, 1000, name);
+      return;
+    }
+
+    do {
+      randomCardIdx = Math.floor(Math.random() * numCards);
+      if (numCards == 1) {
+        break;
+      }
+    } while (randomCardIdx == lastCardFlippedIdx[name]);
+
+    randomSwapImageWithId(name, randomCardIdx);
+    setTimeout(randomSwapImage, 3000, name);
+  }
+
+  function setupGallery1(id) {
+        randomSwapImageWithId("#gallery1", id);
+        $("#gallery1 #fig" + id).click(
+          function() {
+            randomSwapImageWithId("#gallery1", id);
+          }
+        );
+  }
+  for (id = 0; id < 8; id ++) {
+        setupGallery1(id);
+  }
+
+  setTimeout(randomSwapImage, 1000, "#gallery1");
+</script>
+
+<script type="text/javascript">
+  compositionalAnimalsManualClicked = false;
+  compositionalMadeOfManualClicked = false;
+
+  comp_files = {
+    "Original (with mask)": "./images/inpaint/boston_masked.jpg",
+    "\"New York in the background\"": "./images/inpaint/boston_nyc.jpg",
+    "\"Paris in the background\"": "./images/inpaint/boston_paris.jpg",
+    "\"San Francisco in the background\"": "./images/inpaint/boston_sf.jpg"
+  }
+
+  function updateComposition(name) {
+    var compositionSpans = $(name + " p span.selected").map(function() {
+      return $(this).text();
+    }).get();
+    var compositionText = "";
+    for (var compositionSpansIdx = 0; compositionSpansIdx < compositionSpans.length; ++compositionSpansIdx) {
+      if (compositionSpansIdx > 0) {
+        compositionText += " ";
+      }
+      compositionText += compositionSpans[compositionSpansIdx];
+    }
+    if (name == "#compositional_madeof") {
+      if (compositionText == "Original") {
+        $(name + "_img").attr("src", "./images/edit_opt/orig.gif")
+      } else {
+        // Generate a random index that is not the one already selected
+        randImgIdx = "/"; // something guaranteed to be in the path
+        cur_src = $(name + "_img").attr("src");
+        while (cur_src.search(randImgIdx) != -1) {
+          randImgIdx = Math.floor(Math.random() * 4);
+        }
+        first_space = compositionText.search(" ");
+        file = compositionText.slice(first_space + 1, -2).replaceAll(" ", "-");
+        $(name + "_img").attr("src", "./images/edit_opt/" + file + "_" + randImgIdx + ".gif")
+      }
+    } else if (name == "#compositional_animals") {
+      randImgIdx = Math.floor(Math.random() * 4);
+      $(name + "_img").attr("src", comp_files[compositionText]);
+    }
+  }
+
+  function randomComposition(name) {
+    if (name == "#compositional_animals" && compositionalAnimalsManualClicked == true) {
+      compositionalAnimalsManualClicked = false;
+      setTimeout(randomComposition, 4000, name);
+      return;
+    } else if (name == "#compositional_madeof" &&
+               compositionalMadeOfManualClicked == true) {
+      compositionalMadeOfManualClicked = false;
+      setTimeout(randomComposition, 4000, name);
+      return;
+    }
+
+    var compositionPs = $(name + " p.selectable").toArray();
+    var compositionOptions = [];
+    for (var i = 0; i < compositionPs.length; ++i) {
+      var compositionSpanSelected = $(compositionPs[i]).children("span.selected");
+      var compositionSpans = $(compositionPs[i]).children("span").not("span.selected").toArray();
+      for (var j = 0; j < compositionSpans.length; ++j) {
+        compositionOption = {
+          "p": compositionPs[i],
+          "span_selected": compositionSpanSelected,
+          "span_option": $(compositionSpans[j])
+        };
+        compositionOptions.push(compositionOption);
+      }
+    }
+
+    randomCompositionOptionIdx = Math.floor(Math.random() * compositionOptions.length);
+    randomCompositionOption = compositionOptions[randomCompositionOptionIdx];
+
+    randomCompositionOption.span_selected.toggleClass("selected");
+    randomCompositionOption.span_option.toggleClass("selected");
+
+    updateComposition(name);
+    setTimeout(randomComposition, 4000, name);
+  }
+
+  $("#compositional_animals p.selectable span").click(function() {
+    $(this).siblings().removeClass("selected");
+    $(this).addClass("selected");
+    updateComposition("#compositional_animals");
+    compositionalAnimalsManualClicked = true;
+  });
+  $("#compositional_madeof_img").click(function() {
+    updateComposition("#compositional_madeof");
+    compositionalAnimalsManualClicked = true;
+  });
+
+  $("#compositional_madeof p.selectable span").click(function() {
+    $(this).siblings().removeClass("selected");
+    $(this).addClass("selected");
+    updateComposition("#compositional_madeof");
+    compositionalMadeOfManualClicked = true;
+  });
+
+  <!-- setTimeout(randomComposition, 2000, "#compositional_animals"); -->
+  <!-- setTimeout(randomComposition, 4000, "#compositional_madeof"); -->
+</script>
+<script src="bootstrap.bundle.min.js"></script>
   </body>
 </html>

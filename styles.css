@@ -10,9 +10,16 @@ a {
   text-decoration: none;
 }
 
+img.thumbnail {
+  width: 90%;
+  padding: 0px;
+  border: solid;
+  border-width: 1px;
+  border-color: black;
+}
 
 div.edit_grid {
-  text-align: center;
+  text-align: left;
   border-style: solid;
   border-radius: 15px;
   border-width: 3px;
@@ -36,7 +43,7 @@ div.edit_grid {
 div.edit_grid img {
   width: 100%;
   max-width: 512px;
-  margin-bottom: -15px;
+  margin-bottom: 15px;
 }
 
 
@@ -104,9 +111,11 @@ div.white figure {
 
 .icon {
   width: 12.5%;
+  max-height: 100px;
   float: left;
   padding-right: 2px;
   padding-top: 2px;
+  padding-bottom: 20px;
 }
 
 .icon:hover {
@@ -135,7 +144,7 @@ div.image_8 figure figcaption {
   opacity: 0.8;
   display: block;
   font-size: 1.4em;
-  height: 8.5em;
+  height: 3.0em;
 }
 
 div.image_8 img {
@@ -198,7 +207,8 @@ div.compositional div.text span.selected:hover {
 div.authors {
   /* background-color: rgb(26, 26, 26); */
   background-color: rgb(245, 245, 245);
-  color: rgb(35, 35, 35);
+  color: #252525;
+  font-size: 2em;
 }
 
 div.authors p {
@@ -209,7 +219,7 @@ div.authors p {
 }
 
 div.abstract {
-  background-color: rgb(64, 64, 64);
+  background-color: rgb(26, 26, 26);
   color: rgb(255, 255, 255);
 }
 
@@ -260,6 +270,12 @@ a.read-paper button:hover {
     padding: 0 25px;
   }
 
+  h5 {
+    font-family: 'Google Sans';
+    font-size: 0.9em;
+    padding: 0 25px;
+  }
+
   h2.nomobile {
     display: none;
   }
@@ -267,6 +283,13 @@ a.read-paper button:hover {
   h2.mobileonly {
     font-family: 'Google Sans';
     font-size: 1em;
+    padding: 0 25px;
+    margin: 0;
+  }
+
+  h5.mobileonly {
+    font-family: 'Google Sans';
+    font-size: 0.5em;
     padding: 0 25px;
     margin: 0;
   }
@@ -401,6 +424,7 @@ a.read-paper button:hover {
   }
 
   div.authors {
+    font-size: 0.75em;
     padding: 25px 25px;
   }
 
@@ -450,6 +474,11 @@ a.read-paper button:hover {
     text-align: center;
   }
 
+  div.header_light_gray h5 {
+    font-size: 0.9em;
+    text-align: center;
+  }
+
   div.header_light_gray h2 {
     font-size: 1em;
     text-align: center;
@@ -468,6 +497,11 @@ a.read-paper button:hover {
 
   div.header_dark_gray h2 {
     font-size: 1em;
+    text-align: center;
+  }
+
+  div.header_dark_gray h5 {
+    font-size: 0.8em;
     text-align: center;
   }
 
@@ -662,6 +696,7 @@ a.read-paper button:hover {
     cursor: pointer;
   }
 
+
   h1 {
     font-family: 'Google Sans';
     font-size: 8em;
@@ -806,7 +841,7 @@ a.read-paper button:hover {
   }
 
   div.authors {
-    padding: 50px 100px;
+    padding: 50px 100px 10px 50px;
     font-size: 1.5em;
   }
 
@@ -847,6 +882,13 @@ a.read-paper button:hover {
 
   div.white figure img {
     display: block;
+    margin: auto;
+    width: 100%;
+    max-width: 1000px;
+    padding: 50px;
+  }
+
+  div.white figure img2 {
     margin: auto;
     width: 100%;
     max-width: 1000px;
@@ -1054,6 +1096,20 @@ a.read-paper button:hover {
     color: white;
     border-radius: 4px;
   }
+
+  a.dataset button {
+    width: 200px;
+    height: 50px;
+    background: none;
+    font: inherit;
+    border: 1px solid white;
+    color: white;
+    border-radius: 4px;
+  }
+}
+
+div.text-small {
+  font-size: 0.75em;
 }
 
 @media only screen and (min-width: 900px) and (max-width: 1599px) {
