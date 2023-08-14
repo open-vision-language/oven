@@ -55,11 +55,11 @@ Meanwhile, to facilitate the reproducibility of experiments, we also release the
 	- [Full Info (6.9G)](http://storage.googleapis.com/gresearch/open-vision-language/Wiki6M_ver_1_0.jsonl.gz)
 	- [Title Only (419M)](http://storage.googleapis.com/gresearch/open-vision-language/Wiki6M_ver_1_0_title_only.jsonl)
 
-To fully recover the experiments shown in the paper, you would need to also download the ``
+To reproduce the dual encoder results using Wikipedia infobox images, you would need to download images from the url in the field `wikipedia_image_url`.
 
 ## OVEN Images
 
-
+See this [guideline](https://github.com/edchengg/oven_eval/tree/main/image_downloads) for image downloading
 
 ## Acknowledgement
 If you find OVEN useful for your your research and applications, please cite using this BibTeX:
