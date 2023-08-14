@@ -18,13 +18,44 @@ In this project, we formally present the task of Open-domain Visual Entity recog
 
 ## OVEN Annotation
 
-- Entity Split Train [Link (6.9G)](http://storage.googleapis.com/gresearch/open-vision-language/oven/oven_entity_train.jsonl)
-- Entity Split Val [Link (6.9G)](http://storage.googleapis.com/gresearch/open-vision-language/oven/oven_entity_val.jsonl)
-- Entity Split Test [Link (6.9G)](http://storage.googleapis.com/gresearch/open-vision-language/oven/oven_entity_test.jsonl)
-- Query Split Train [Link (6.9G)](http://storage.googleapis.com/gresearch/open-vision-language/oven/oven_query_train.jsonl)
-- Query Split Val [Link (6.9G)](http://storage.googleapis.com/gresearch/open-vision-language/oven/oven_query_val.jsonl)
-- Query Split Test [Link (6.9G)](http://storage.googleapis.com/gresearch/open-vision-language/oven/oven_query_test.jsonl)
-- 6 Million Wikipedia Meta Information [Link (6.9G)](http://storage.googleapis.com/gresearch/open-vision-language/Wiki6M_ver_1_0.jsonl.gz)
+The annotations are released as jsaonline file for each set and data split as discussed in the paper. 
+
+Below is an example of the format for a training data:  
+
+```
+{
+	"data_id": "oven_entity_train_00000000",
+	"image_id": "oven_00000000",
+	"question": "what is the model of this aircraft?",
+	"entity_id": "Q1141409",
+	"entity_text": "Dassault Falcon 900",
+	"data_split": "entity_train"
+}
+```
+
+Here entity id are the wikidata id, which is unique and can be searched using the wikidata API: `https://www.wikidata.org/wiki/{entity_id}`. Meanwhile, the entity text are the name of the entity of its corresponding wikidata id, on the 2022/10/01's Wikidump. Note that Wikipedia is constantly updating the entity text name as the name and definition of an entity if changing over the time.
+
+
+Following are links to each annotation file:
+
+- Entity Set
+	- Train Split [Link (962M)](http://storage.googleapis.com/gresearch/open-vision-language/oven/oven_entity_train.jsonl)
+	- Val Split [Link (26M)](http://storage.googleapis.com/gresearch/open-vision-language/oven/oven_entity_val.jsonl)
+	- Test Split [Link (80M)](http://storage.googleapis.com/gresearch/open-vision-language/oven/oven_entity_test.jsonl)
+- Query Set
+	- Train Split [Link (6.0M)](http://storage.googleapis.com/gresearch/open-vision-language/oven/oven_query_train.jsonl)
+	- Val Split [Link (644K)](http://storage.googleapis.com/gresearch/open-vision-language/oven/oven_query_val.jsonl)
+	- Test Split [Link (2.3M)](http://storage.googleapis.com/gresearch/open-vision-language/oven/oven_query_test.jsonl)
+- Human Set [Link](http://storage.googleapis.com/gresearch/open-vision-language/oven/oven_human.jsonl)
+
+
+Meanwhile, to facilitate the reproducibility of experiments, we also release the 6M wikipedia text information (derived from Wikidump 2022/10/01).
+
+- 6 Million Wikipedia Text Information
+	- [Full Info (6.9G)](http://storage.googleapis.com/gresearch/open-vision-language/Wiki6M_ver_1_0.jsonl.gz)
+	- [Title Only (419M)](http://storage.googleapis.com/gresearch/open-vision-language/Wiki6M_ver_1_0_title_only.jsonl)
+
+To fully recover the experiments shown in the paper, you would need to also download the ``
 
 ## OVEN Images
 
