@@ -2,7 +2,7 @@
 
 **[Open-domain Visual Entity Recognition: Towards Recognizing Millions of Wikipedia Entities](https://arxiv.org/abs/2302.11154)** (**ICCV 2023 Oral**)
 
-[Hexiang Hu](https://www.hexianghu.com/), [Yi Luan](https://luanyi.github.io/), [Yang Chen](https://edchengg.github.io/), [Urvashi Khandelwal](https://urvashik.github.io/), [Mandar Joshi](https://mandarjoshi90.github.io/), [Kenton Lee](https://kentonl.com/), [Kristina Toutanova](http://kristinatoutanova.com/), [Ming-Wei Chang](https://mingweichang.org/).
+[H. Hu](https://www.hexianghu.com/), [Y. Luan](https://luanyi.github.io/), [Y. Chen](https://edchengg.github.io/), [U. Khandelwal](https://urvashik.github.io/), [M. Joshi](https://mandarjoshi90.github.io/), [K. Lee](https://kentonl.com/), [K. Toutanova](http://kristinatoutanova.com/), and [M.-W. Chang](https://mingweichang.org/).
 
 [[Project Page]](https://open-vision-language.github.io/oven/) [[Annotation]](#oven-annotation) [[Images]](#oven-images) [[Contributed Code]](https://github.com/edchengg/oven_eval) [[Leaderboard (Coming Soon)]]()
 
